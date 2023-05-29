@@ -1,0 +1,23 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - node
+
+os:
+  - osx
+  - linux
+
+branches:
+  only:
+    - master
+    - develop
+
+script:
+  - npm install googleapis ms-rest-azure azure-cognitiveservices-websearch
+  - npm install jest
+  - npm run test:coveralls
+
+notifications:
+  email: false
